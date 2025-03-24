@@ -32,6 +32,7 @@ import threading
 import time
 from datetime import datetime
 import os
+import pytz
 
 app = Flask(__name__)
 
@@ -300,7 +301,8 @@ def handle_flex_json(event, flex_json):
 # 定時推播訊息
 def push_message_job():
     global LASTPUSHDATE
-    now = datetime.now(tz='Asia/Taipei')
+    taipei_tz = pytz.timezone('Asia/Taipei')
+    now = datetime.now(taipei_tz)
     current_time_str = now.strftime("%H:%M")
     records = list(get_cols("Event").find({"user_id": USER_ID}))
     if records:
