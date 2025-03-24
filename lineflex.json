@@ -1,0 +1,61 @@
+{
+    "type": "bubble",
+    "size": "giga",
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+        {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                    {
+                        "type": "text",
+                        "text": "{{ calendar_evnet }}",
+                        "wrap": true,
+                        "weight": "bold"
+                    },
+                    {
+                        "type": "text",
+                        "text": "期限：{{ calendar_date }}",
+                        "flex": 2,
+                        "weight": "bold"
+                    }
+                    ],
+                    "flex": 3,
+                    "alignItems": "flex-start"
+                },
+                {
+                    "type": "button",
+                    "action": {
+                    "type": "postback",
+                    "label": "刪除",
+                    "data": "delete"
+                    },
+                    "style": "primary",
+                    "flex": 1,
+                    "margin": "none",
+                    "color": "#c1121f",
+                    "height": "sm"
+                }
+                ],
+                "alignItems": "center"
+            }
+            ]
+        }
+        ]
+    },
+    "styles": {
+        "body": {
+        "backgroundColor": "#fdf0d5"
+        }
+    }
+}
